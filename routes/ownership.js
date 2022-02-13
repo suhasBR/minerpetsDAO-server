@@ -4,7 +4,7 @@ const router = express.Router();
 const {
     getNFTByOwner,
     addMintInfo
-} = require("../controllers/user");
+} = require("../controllers/ownership");
 
 
 router.route('/mint').post(addMintInfo);

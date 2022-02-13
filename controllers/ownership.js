@@ -1,11 +1,11 @@
-const User = require("../models/User");
+const Ownership = require("../models/Ownership");
 
 const getNFTByOwner = async (req, res) => {
   try {
     let owner = req.query.owner;
     let type = req.query.type;
 
-    const data = await User.find({
+    const data = await Ownership.find({
       owner: owner,
       type: type
     });
@@ -20,9 +20,8 @@ const getNFTByOwner = async (req, res) => {
 };
 
 const addMintInfo = async (req, res) => {
-    console.log('inside')
   try {
-    const newNFT = await User.create(req.body);
+    const newNFT = await Ownership.create(req.body);
     res.status(201).json({ newNFT });
   } catch (error) {
     console.log(error);

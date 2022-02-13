@@ -4,9 +4,10 @@ const app = express ();
 require('dotenv').config();
 const connectDB = require('./db/connect');
 const NFT = require("./routes/NFT");
-const user = require("./routes/user");
+const ownership = require("./routes/ownership");
+const profile = require("./routes/profile");
 
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 
@@ -15,18 +16,14 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/v1/NFTs',NFT);
-app.use('/api/v1/user',user)
+app.use('/api/v1/ownership',ownership)
+app.use('/api/v1/profile',profile)
 
 
 
 app.get('/hello',(req,res) => {
     res.send('Delta Racers');
 });
-
-
-
-
-
 
 
 const start = async () => {

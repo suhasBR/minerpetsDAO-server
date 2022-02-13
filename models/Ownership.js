@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const UserSchema = new mongoose.Schema({
+const OwnershipSchema = new mongoose.Schema({
 
     owner: {
         type : String,
@@ -32,4 +32,4 @@ const UserSchema = new mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('User',UserSchema);
+module.exports = mongoose.model('Ownership',OwnershipSchema);
