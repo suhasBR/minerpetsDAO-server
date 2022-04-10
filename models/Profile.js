@@ -11,6 +11,10 @@ const ProfileSchema = new mongoose.Schema(
       default: null
     },
     nftsowned: [{}],
+    freedrop: {
+      type: Boolean,
+      default: false
+    },
   },
   { timestamps: true }
 );
